@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Mini Projet RNA</h1>
+      <h3 class="title">Valeurs de tous les parametres</h3>
+      <div class="inputs">
+        <div class="input_container">
+          <label for="series_length">Longueur de la serie</label>
+
+          <input
+            class="input"
+            type="number"
+            name="series_length"
+            id="series_length"
+            placeholder="Longueur de la serie"
+            value="500"
+            min="10"
+          />
+        </div>
+
+        <div class="input_container">
+          <label for="no_linearity">Parametre de non linearite</label>
+
+          <input
+            class="input"
+            type="number"
+            name="no_linearity"
+            id="no_linearity"
+            placeholder="Parametre de non linearite"
+            value="2"
+            min="1"
+
+          />
+        </div>
+        <div class="input_container">
+          <label for="first_value">Premiere valeur de la serie</label>
+
+          <input
+            class="input"
+            type="number"
+            name="first_value"
+            id="first_value"
+            placeholder="Premiere valeur de la serie"
+            value="0.1"
+            min="0.1"
+
+          />
+        </div>
+        <div class="input_container">
+          <label for="learning_rate">Pas d'apprentissage</label>
+
+          <input
+            class="input"
+            type="number"
+            name="learning_rate"
+            id="learning_rate"
+            placeholder="Pas d'apprentissage"
+            value="0.1"
+            min="0.1"
+          />
+        </div>
+        <div class="input_container">
+          <button class="input button" id="run_button" onclick="calculate()">
+            Calculer
+          </button>
+        </div>
+      </div>
+      <h3 class="title">Prediction</h3>
+      <div class="inputs">
+        <div class="input_container">
+          <label for="start_index">Position de la valeur de depart</label>
+
+          <input
+            class="input"
+            type="number"
+            name="start_indx"
+            id="start_index"
+            placeholder="Position de la valeur de depart"
+            value="0"
+            min="0"
+          />
+        </div>
+        <div class="input_container">
+          <label for="step">Pas de prediction</label>
+
+          <input
+            class="input"
+            type="number"
+            name="step"
+            id="step"
+            placeholder="Pas de prediction"
+            value="1"
+            min="1"
+          />
+        </div>
+        <div class="input_container">
+          <label for="count">Nombre de valeur a predire (prediction a un pas en avant)</label>
+
+          <input
+            class="input"
+            type="number"
+            name="count"
+            id="count"
+            placeholder="Nombre de valeur a predire(prediction a un pas en avant)"
+            value="1"
+            min="1"
+          />
+        </div>
+        <div class="input_container">
+          <label></label>
+          <button class="input button" id="run_button" onclick="predict()">
+            Predire
+          </button>
+        </div>
+      </div>
+      <h3 class="title">Resultat</h3>
+
+      <div class="charts">
+        <div class="chart full_size">
+          <canvas id="myChart"></canvas>
+        </div>
+        <!--<div class="chart">
+          <canvas id="nmseChart"></canvas>
+        </div>
+        <div class="chart">
+          <canvas id="mseChart"></canvas>
+        </div> -->
+      </div> 
+    </div>
+  </body>
+  <script src="./script/main.js"></script>
+  <script src="./script/TemporalSeries.js"></script>
+  <script src="./script/Jacobi.js"></script>
+  <script src="./script/Takens.js"></script>
+  <script src="./script/Utils.js"></script>
+  <script src="./script/NeuralNetwork.js"></script>
+  <script src="./script/Descente.js"></script>
+  <script src="./script/SetupChart.js"></script>
+  <script src="./script/chartjs.js"></script>
+</html>
